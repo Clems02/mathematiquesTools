@@ -32,7 +32,7 @@ export const resolveEquation = (equa: string) => {
 
   if (indexInconnu === 0) {
     a = 1;
-    b = Number(splitedEquation.slice(2, fullEquation.length).join(""));
+    b = Number(splitedEquation.slice(1, fullEquation.length).join(""));
   } else {
     a = Number(splitedEquation.slice(0, indexInconnu - 1).join("")) || -1;
     b = Number(
@@ -40,6 +40,7 @@ export const resolveEquation = (equa: string) => {
     );
   }
 
+  console.log({ a, b });
   if (a === 0) {
     if (b === 0) {
       return "L'équation est indéterminée (toutes les valeurs de x sont des solutions).";
