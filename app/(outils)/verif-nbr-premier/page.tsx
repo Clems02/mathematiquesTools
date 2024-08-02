@@ -2,21 +2,18 @@
 import { ToolPage } from "@/src/components/ui/ToolPage";
 import { ToolTitle } from "@/src/components/ui/ToolTitle";
 import { Stack, Typography } from "@mui/material";
-import { EquationForm } from "./Form";
+import { VerifPremierForm } from "./Form";
 
-export default function Equation1erDegrePage() {
+export default function VerifPremierPage() {
   return (
     <ToolPage>
-      <ToolTitle label="Résolution d'équation" />
+      <ToolTitle label="Nombre premier ?" />
       <Stack alignItems={"center"}>
         <Typography variant="h6">
-          Entre une équation de la forme ax + b = cx + d
-        </Typography>
-        <Typography variant="subtitle2">
-          a, b, c et d sont des réels.
+          Entre un nombre entier naturel pour vérifier s'il est premier.
         </Typography>
       </Stack>
-      <EquationForm />
+      <VerifPremierForm />
     </ToolPage>
   );
 }
