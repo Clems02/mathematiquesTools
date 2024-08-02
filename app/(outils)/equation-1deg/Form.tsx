@@ -38,7 +38,6 @@ export const EquationForm = (props: EquationFormType) => {
           {...register("equation")}
           error={!!errors.equation}
           helperText={errors.equation && errors.equation.message}
-          defaultValue={"10x-5 = 0"}
         />
         <Button type="submit">Résoudre</Button>
       </Stack>
