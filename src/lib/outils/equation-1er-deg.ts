@@ -28,22 +28,15 @@ export const resolveEquation = (equa: string) => {
   const indexInconnu = fullEquation
     .split("")
     .findIndex((value) => value === inconnu);
+  const splitedEquation = fullEquation.split("");
 
   if (indexInconnu === 0) {
     a = 1;
-    b = Number(fullEquation.split("").slice(2, fullEquation.length).join(""));
+    b = Number(splitedEquation.slice(2, fullEquation.length).join(""));
   } else {
-    a = Number(
-      fullEquation
-        .split("")
-        .slice(0, indexInconnu - 1)
-        .join("")
-    );
+    a = Number(splitedEquation.slice(0, indexInconnu - 1).join("")) || -1;
     b = Number(
-      fullEquation
-        .split("")
-        .slice(indexInconnu + 1, fullEquation.length)
-        .join("")
+      splitedEquation.slice(indexInconnu + 1, fullEquation.length).join("")
     );
   }
 
