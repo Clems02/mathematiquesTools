@@ -5,7 +5,7 @@ import { PropsWithChildren } from "react";
 
 const layout = ({ children }: PropsWithChildren) => {
   return (
-    <Stack spacing={4} justifyContent={"center"} alignItems={"center"}>
+    <Stack spacing={4} justifyContent={"center"} alignItems={"center"} my={4}>
       <ContainerCenter>{children}</ContainerCenter>
       <BackButton>Retour outils</BackButton>
     </Stack>

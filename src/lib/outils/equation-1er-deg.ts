@@ -1,22 +1,71 @@
-import { simplify } from "mathjs";
+import { all, create, rationalize } from "mathjs";
 import { emptySpace, getFirstInconnu, operator } from "../utils";
+const math = create(all, {
+  number: "Fraction",
+});
 
 export const resolveEquation = (equa: string) => {
-  // Remplacer tous les espaces pour faciliter la manipulation
   const equation = emptySpace(equa);
 
   const splitedPart = equation.split("=");
-
-  if (splitedPart.length !== 2) {
-    return "L'équation doit contenir un signe égal.";
-  }
 
   let leftPart = splitedPart[0];
   let rightPart = splitedPart[1];
 
   let fullEquation = `${leftPart}-(${rightPart})`;
 
-  let simplifiedEquation = simplify(fullEquation).toString();
+  fullEquation = rationalize(fullEquation).toString();
+  fullEquation = emptySpace(fullEquation);
+
+  if (fullEquation.split("").includes("^")) {
+    throw new Error("Equation du second degré non pris en charge...");
+  }
+
+  let a = 0;
+  let b = 0;
+
+  const inconnu = getFirstInconnu(fullEquation);
+  const indexInconnu = fullEquation
+    .split("")
+    .findIndex((value) => value === inconnu);
+
+  if (indexInconnu === 0) {
+    a = 1;
+    b = Number(fullEquation.split("").slice(2, fullEquation.length).join(""));
+  } else {
+    a = Number(
+      fullEquation
+        .split("")
+        .slice(0, indexInconnu - 1)
+        .join("")
+    );
+    b = Number(
+      fullEquation
+        .split("")
+        .slice(indexInconnu + 1, fullEquation.length)
+        .join("")
+    );
+  }
+
+  if (a === 0) {
+    if (b === 0) {
+      return "L'équation est indéterminée (toutes les valeurs de x sont des solutions).";
+    } else {
+      return "L'équation est impossible (aucune valeur de x ne satisfait l'équation).";
+    }
+  } else {
+    let printValue: string | number = -b / a;
+
+    const hasDecimal = !Number.isInteger(printValue);
+
+    if (hasDecimal) {
+      const fraction = math.fraction(printValue);
+      const formattedFraction = math.format(fraction, { fraction: "ratio" });
+      printValue = formattedFraction;
+    }
+
+    return `La solution est ${inconnu} = ${printValue}`;
+  }
 };
 
 export const getAllIndexInconnu = (equation: string) => {
