@@ -18,11 +18,18 @@ export const ToolTitle = ({ label }: ToolTitleType) => {
         borderRadius: "90px",
         border: `4px solid ${darken(defaultColor, 0.3)}`,
         m: "auto",
+        justifyContent: "center",
+        alignItems: "center",
+        display: "flex",
       }}
     >
       <Typography
         variant="h5"
-        sx={{ textDecoration: "underline", fontWeight: 900 }}
+        sx={{
+          textDecoration: "underline",
+          fontWeight: 900,
+          textAlign: "center",
+        }}
       >
         {label}
       </Typography>
