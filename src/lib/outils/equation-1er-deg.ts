@@ -40,7 +40,6 @@ export const resolveEquation = (equa: string) => {
     );
   }
 
-  console.log({ a, b });
   if (a === 0) {
     if (b === 0) {
       return "L'équation est indéterminée (toutes les valeurs de x sont des solutions).";
