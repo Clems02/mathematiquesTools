@@ -1,18 +1,18 @@
 import { ToolPage } from "@/src/components/ui/ToolPage";
 import { ToolTitle } from "@/src/components/ui/ToolTitle";
 import { Stack, Typography } from "@mui/material";
-import { VerifPremierForm } from "./Form";
+import { DiviseursListForm } from "./Form";
 
-export default function VerifPremierPage() {
+export default async function DiviseurNbrPage() {
   return (
     <ToolPage>
-      <ToolTitle label="Nombre premier ?" />
+      <ToolTitle label="Diviseurs d'un nombre" />
       <Stack alignItems={"center"}>
         <Typography variant="h6">
-          Entre un nombre entier naturel pour vérifier s'il est premier.
+          Entre un nombre entier naturel pour obtenir tous ses diviseurs.
         </Typography>
       </Stack>
-      <VerifPremierForm />
+      <DiviseursListForm />
     </ToolPage>
   );
 }

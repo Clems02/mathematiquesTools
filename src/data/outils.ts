@@ -2,6 +2,7 @@ export type tool = {
   id: number;
   url: string;
   label: string;
+  inProgress?: boolean;
 };
 
 export const tools: tool[] = [
@@ -19,6 +20,7 @@ export const tools: tool[] = [
     id: 3,
     label: "Obtenir nombres premiers dans intervalle",
     url: "/liste-nbr-premier-intervalle",
+    inProgress: true,
   },
   {
     id: 4,
@@ -29,5 +31,11 @@ export const tools: tool[] = [
     id: 5,
     label: "Résolution équation 1er degré",
     url: "/equation-1deg",
+  },
+  {
+    id: 6,
+    label: "PGCD de 2 nombres",
+    url: "/pgcd",
+    inProgress: true,
   },
 ];

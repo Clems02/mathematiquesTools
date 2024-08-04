@@ -10,11 +10,11 @@ export default function Home() {
         direction={"row"}
         flexWrap={"wrap"}
         justifyContent={"center"}
-        rowGap={3}
+        rowGap={5}
         columnGap={3}
       >
         {tools.map((tool) => (
-          <ToolCard key={tool.id} label={tool.label} url={tool.url} />
+          <ToolCard key={tool.id} {...tool} />
         ))}
       </Stack>
     </ContainerCenter>
