@@ -20,7 +20,6 @@ export const tools: tool[] = [
     id: 3,
     label: "Obtenir nombres premiers dans intervalle",
     url: "/liste-nbr-premier-intervalle",
-    inProgress: true,
   },
   {
     id: 4,
@@ -36,6 +35,12 @@ export const tools: tool[] = [
     id: 6,
     label: "PGCD de 2 nombres",
     url: "/pgcd",
+    inProgress: true,
+  },
+  {
+    id: 7,
+    label: "PPCM de 2 nombres",
+    url: "/ppcm",
     inProgress: true,
   },
 ];
