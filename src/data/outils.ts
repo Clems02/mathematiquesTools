@@ -40,6 +40,5 @@ export const tools: tool[] = [
     id: 7,
     label: "PPCM de 2 nombres",
     url: "/ppcm",
-    inProgress: true,
   },
 ];
