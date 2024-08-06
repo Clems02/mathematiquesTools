@@ -41,4 +41,15 @@ export const tools: tool[] = [
     label: "PPCM de 2 nombres",
     url: "/ppcm",
   },
+  {
+    id: 8,
+    label: "Calcul moyenne",
+    url: "/moyenne",
+  },
+  {
+    id: 9,
+    label: "Médiane",
+    url: "/mediane",
+    inProgress: true,
+  },
 ];
