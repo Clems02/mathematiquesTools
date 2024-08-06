@@ -35,7 +35,6 @@ export const tools: tool[] = [
     id: 6,
     label: "PGCD de 2 nombres",
     url: "/pgcd",
-    inProgress: true,
   },
   {
     id: 7,
