@@ -50,6 +50,5 @@ export const tools: tool[] = [
     id: 9,
     label: "Médiane",
     url: "/mediane",
-    inProgress: true,
   },
 ];
