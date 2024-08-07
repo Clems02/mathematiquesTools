@@ -3,16 +3,22 @@
 import { defaultColor } from "@/src/data/configSite";
 import { tool } from "@/src/data/outils";
 import {
+  Box,
   Card,
   CardActionArea,
   CardContent,
   Chip,
   Typography,
   darken,
+  lighten,
+  useTheme,
 } from "@mui/material";
 import Link from "next/link";
+import Icon from "./Icon";
 
-export const ToolCard = ({ url, label, inProgress }: tool) => {
+export const ToolCard = ({ url, label, inProgress, icon }: tool) => {
+  const theme = useTheme();
+
   return (
     <Card
       sx={{
@@ -23,6 +29,7 @@ export const ToolCard = ({ url, label, inProgress }: tool) => {
         border: "4px solid transparent",
         position: "relative",
         overflow: "visible",
+        height: "100%",
       }}
       elevation={5}
     >
@@ -47,13 +54,24 @@ export const ToolCard = ({ url, label, inProgress }: tool) => {
       >
         <CardContent
           sx={{
-            maxWidth: "300px",
-            textAlign: "center",
-            height: "100%",
-            alignItems: "center",
             display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100%",
+            gap: 2,
           }}
         >
+          <Box
+            sx={{
+              border: `2px solid ${theme.palette.primary.dark}`,
+              p: 1,
+              borderRadius: 50,
+              display: "flex",
+              backgroundColor: lighten(theme.palette.primary.light, 0.5),
+            }}
+          >
+            <Icon name={icon} color={theme.palette.primary.dark} size={20} />
+          </Box>
           <Typography variant="subtitle2" fontFamily={"Cartoon"}>
             {label}
           </Typography>

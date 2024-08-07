@@ -7,7 +7,7 @@ const Header = ({ children }: PropsWithChildren) => {
   return (
     <Box>
       <AppBar component={"nav"} position="static">
-        <Toolbar sx={{ justifyContent: "space-between" }}>
+        <Toolbar sx={{ justifyContent: "space-between", mx: "auto" }}>
           <LinkNext href="/">
             <Stack direction={"row"} gap={2} alignItems={"center"}>
               <Image

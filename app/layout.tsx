@@ -1,6 +1,7 @@
 import Footer from "@/src/components/Layout/Footer";
 import Header from "@/src/components/Layout/Header";
 import LayoutBox from "@/src/components/Layout/LayoutBox";
+import { backgroundColor } from "@/src/data/configSite";
 import Theme from "@/src/lib/theme/theme";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
@@ -21,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={GeistSans.className}>
         <Theme>
-          <LayoutBox>
+          <LayoutBox sx={{ background: backgroundColor }}>
             <Header />
             {children}
             <Footer />

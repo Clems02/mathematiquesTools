@@ -1,22 +1,18 @@
 import ContainerCenter from "@/src/components/Layout/ContainerCenter";
 import { ToolCard } from "@/src/components/ui/ToolCard";
 import { tools } from "@/src/data/outils";
-import { Stack } from "@mui/material";
+import { Grid } from "@mui/material";
 
 export default function Home() {
   return (
-    <ContainerCenter>
-      <Stack
-        direction={"row"}
-        flexWrap={"wrap"}
-        justifyContent={"center"}
-        rowGap={5}
-        columnGap={3}
-      >
+    <ContainerCenter sx={{ py: 4 }}>
+      <Grid container spacing={2}>
         {tools.map((tool) => (
-          <ToolCard key={tool.id} {...tool} />
+          <Grid key={tool.id} item xs={12} sm={6} md={4}>
+            <ToolCard {...tool} />
+          </Grid>
         ))}
-      </Stack>
+      </Grid>
     </ContainerCenter>
   );
 }
